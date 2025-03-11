@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SehatIn</string>
+    <string name="skip">Skip</string>
+    <string name="lt"><![CDATA[<]]></string>
+    <string name="gt"><![CDATA[>]]></string>
+</resources>
