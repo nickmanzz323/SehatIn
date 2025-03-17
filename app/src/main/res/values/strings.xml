@@ -3,4 +3,6 @@
     <string name="skip">Skip</string>
     <string name="lt"><![CDATA[<]]></string>
     <string name="gt"><![CDATA[>]]></string>
+    <string name="Left"><![CDATA[<]]></string>
+    <string name="Right"><![CDATA[>]]></string>
 </resources>
