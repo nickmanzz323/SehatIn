@@ -5,4 +5,15 @@
     <string name="gt"><![CDATA[>]]></string>
     <string name="Left"><![CDATA[<]]></string>
     <string name="Right"><![CDATA[>]]></string>
+
+    <string name="heading_1">Selamat Datang !</string>
+    <string name="heading_2">Calories Tracking</string>
+    <string name="heading_3">Food Scaning</string>
+    <string name="heading_4">Food and Sports </string>
+
+    <string name="desc_1">Lanjut untuk selangkah lebih sehat </string>
+    <string name="desc_2">Catat kalori harian anda dengan mudah  </string>
+    <string name="desc_3">Scan makanan untuk mengetahui kalori secara otomatis </string>
+    <string name="desc_4">Dapatkan rekomendasi makanan dan olahraga terbaik </string>
+
 </resources>
