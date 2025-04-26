@@ -47,6 +47,11 @@ public class ViewPagerAdapter extends PagerAdapter{
         return view == object;
     }
 
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        container.removeView((View) object);
+    }
+
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {

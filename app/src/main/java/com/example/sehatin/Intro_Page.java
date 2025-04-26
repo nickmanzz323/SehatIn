@@ -51,9 +51,9 @@ public class Intro_Page extends AppCompatActivity {
         prev_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (getItem(0) > 0){
-                    mSLideViewPager.setCurrentItem(getItem(-1),true);
+                int currentItem = mSLideViewPager.getCurrentItem();
+                if (currentItem > 0){
+                    mSLideViewPager.setCurrentItem(currentItem - 1,true);
                 }
             }
         });
@@ -61,9 +61,9 @@ public class Intro_Page extends AppCompatActivity {
         next_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (getItem(0) < 3)
-                    mSLideViewPager.setCurrentItem(getItem(1),true);
+                int currentItem = mSLideViewPager.getCurrentItem();
+                if (currentItem < viewPagerAdapter.getCount() - 1)
+                    mSLideViewPager.setCurrentItem(currentItem + 1,true);
                 else {
                     Intent i = new Intent(Intro_Page.this,MainPage.class);
                     startActivity(i);
