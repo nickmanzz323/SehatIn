@@ -65,7 +65,7 @@ public class Intro_Page extends AppCompatActivity {
                 if (currentItem < viewPagerAdapter.getCount() - 1)
                     mSLideViewPager.setCurrentItem(currentItem + 1,true);
                 else {
-                    Intent i = new Intent(Intro_Page.this,MainPage.class);
+                    Intent i = new Intent(Intro_Page.this,WelcomePage.class);
                     startActivity(i);
                     finish();
                 }
@@ -75,7 +75,7 @@ public class Intro_Page extends AppCompatActivity {
         skip_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Intro_Page.this, MainPage.class);
+                Intent i = new Intent(Intro_Page.this, WelcomePage.class);
                 startActivity(i);
                 finish();
             }

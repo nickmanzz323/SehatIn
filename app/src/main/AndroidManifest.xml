@@ -15,11 +15,20 @@
         <activity
             android:name=".SplashScreen"
             android:exported="false" />
+
         <activity
             android:name=".MainPage"
             android:exported="false" />
+
         <activity
             android:name=".Intro_Page"
+            android:exported="true" />
+
+        <activity
+            android:name=".Welcome_Page"
+            android:exported="true" />
+        <activity
+            android:name=".RegisterPage"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

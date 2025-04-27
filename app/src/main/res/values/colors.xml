@@ -5,5 +5,7 @@
     <color name="button_color">#49D199</color>
     <color name="text_color1">#6E7179</color>
     <color name="text_color2">#B3B3B3</color>
+    <color name="primary">#49D199</color>
+    <color name="surface_primary">#242833</color>
 
 </resources>
