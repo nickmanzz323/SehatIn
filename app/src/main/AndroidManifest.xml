@@ -13,17 +13,35 @@
         android:theme="@style/Theme.SehatIn"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterCalorie"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterAge"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterHeight"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActive"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterGender"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterGoal"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterGeneral"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="false" />
-
         <activity
             android:name=".MainPage"
             android:exported="false" />
-
         <activity
             android:name=".RegisterPage"
             android:exported="true" />
-
         <activity
             android:name=".WelcomePage"
             android:exported="true" />
