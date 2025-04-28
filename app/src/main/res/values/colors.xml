@@ -7,5 +7,6 @@
     <color name="text_color2">#B3B3B3</color>
     <color name="primary">#49D199</color>
     <color name="surface_primary">#242833</color>
+    <color name="on_background">#B3B3B3</color>
 
 </resources>

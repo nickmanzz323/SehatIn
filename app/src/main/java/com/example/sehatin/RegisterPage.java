@@ -25,7 +25,7 @@ public class RegisterPage extends AppCompatActivity {
                 // Redirect ke MainPage
                 Intent intent = new Intent(RegisterPage.this, MainPage.class);
                 startActivity(intent);
-                finish(); // Optional,
+                finish();
             }
         });
     }
