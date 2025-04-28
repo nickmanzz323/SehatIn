@@ -1,6 +1,7 @@
 package com.example.sehatin;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.content.Context;
 
 public class Intro_Page extends AppCompatActivity {
 
@@ -20,7 +22,7 @@ public class Intro_Page extends AppCompatActivity {
 
     TextView[] dots;
     ViewPagerAdapter viewPagerAdapter;
-
+    String prevStarted = "yes";
     private int getItem(int i){
         return mSLideViewPager.getCurrentItem() + i;
     }
@@ -37,6 +39,18 @@ public class Intro_Page extends AppCompatActivity {
             mDotLayout.addView(dots[i]);
         }
         dots[position].setTextColor(getResources().getColor(R.color.button_color,getApplicationContext().getTheme()));
+    }
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        if (!sharedpreferences.getBoolean(prevStarted, false)) {
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(prevStarted, Boolean.TRUE);
+            editor.apply();
+        } else {
+            Intent i = new Intent(Intro_Page.this,WelcomePage.class);
+            startActivity(i);
+        }
     }
 
     @Override
