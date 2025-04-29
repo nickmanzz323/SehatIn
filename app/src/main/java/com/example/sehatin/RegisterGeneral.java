@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -30,8 +31,8 @@ public class RegisterGeneral extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_general);
 
-        TextView backButton = findViewById(R.id.prevButton);
-        Button nextButton = findViewById(R.id.saveButton);
+        ImageView backButton = findViewById(R.id.prevButton);
+        ImageView nextButton = findViewById(R.id.saveButton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
