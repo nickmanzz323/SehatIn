@@ -18,6 +18,13 @@
     <string name="introPage_desc_4">Dapatkan rekomendasi makanan dan olahraga terbaik </string>
     <string name="mainPage_body_information">Body Information</string>
     <string name="mainPage_nutrients_indicator">Nutrients Indicator</string>
+    <string name="registerGeneral_profile_detail">Profile Detail</string>
+    <string name="registerGeneral_name">Name:</string>
+    <string name="registerGeneral_name2">Name</string>
+    <string name="registerGeneral_Password">Password</string>
+    <string name="registerGeneral_email">Email</string>
+    <string name="registerGeneral_Save">Save</string>
+    <string name="registerGeneral_Next">next</string>
 
     <!-- String untuk -->
 </resources>
