@@ -68,7 +68,7 @@
         app:srcCompat="@drawable/buttoncontinuegoogle" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/continueWithEmailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +80,7 @@
         app:srcCompat="@drawable/buttoncontinueemail" />
 
     <ImageView
-        android:id="@+id/guestbutton"
+        android:id="@+id/guestButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

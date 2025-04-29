@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,17 +20,17 @@ public class ViewPagerAdapter extends PagerAdapter{
     };
 
     int[] headings = {
-            R.string.heading_1,
-            R.string.heading_2,
-            R.string.heading_3,
-            R.string.heading_4
+            R.string.introPage_heading_1,
+            R.string.introPage_heading_2,
+            R.string.introPage_heading_3,
+            R.string.introPage_heading_4
     };
 
     int[] description = {
-            R.string.desc_1,
-            R.string.desc_2,
-            R.string.desc_3,
-            R.string.desc_4
+            R.string.introPage_desc_1,
+            R.string.introPage_desc_2,
+            R.string.introPage_desc_3,
+            R.string.introPage_desc_4
     };
 
     @Override

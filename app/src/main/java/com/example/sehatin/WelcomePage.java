@@ -20,7 +20,7 @@
                 @Override
                 public void onClick(View view) {
                     // Intent untuk pindah ke LoginMenu
-                    Intent intent = new Intent(WelcomePage.this, RegisterPage.class);
+                    Intent intent = new Intent(WelcomePage.this, RegisterOption.class);
                     startActivity(intent);
                 }
             });

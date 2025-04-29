@@ -6,14 +6,18 @@
     <string name="Left"><![CDATA[<]]></string>
     <string name="Right"><![CDATA[>]]></string>
 
-    <string name="heading_1">Selamat Datang !</string>
-    <string name="heading_2">Calories Tracking</string>
-    <string name="heading_3">Food Scaning</string>
-    <string name="heading_4">Food and Sports </string>
+    <!-- String untuk intro page -->
+    <string name="introPage_heading_1">Selamat Datang !</string>
+    <string name="introPage_heading_2">Calories Tracking</string>
+    <string name="introPage_heading_3">Food Scaning</string>
+    <string name="introPage_heading_4">Food and Sports </string>
 
-    <string name="desc_1">Lanjut untuk selangkah lebih sehat </string>
-    <string name="desc_2">Catat kalori harian anda dengan mudah  </string>
-    <string name="desc_3">Scan makanan untuk mengetahui kalori secara otomatis </string>
-    <string name="desc_4">Dapatkan rekomendasi makanan dan olahraga terbaik </string>
+    <string name="introPage_desc_1">Lanjut untuk selangkah lebih sehat </string>
+    <string name="introPage_desc_2">Catat kalori harian anda dengan mudah  </string>
+    <string name="introPage_desc_3">Scan makanan untuk mengetahui kalori secara otomatis </string>
+    <string name="introPage_desc_4">Dapatkan rekomendasi makanan dan olahraga terbaik </string>
+    <string name="mainPage_body_information">Body Information</string>
+    <string name="mainPage_nutrients_indicator">Nutrients Indicator</string>
 
+    <!-- String untuk -->
 </resources>
