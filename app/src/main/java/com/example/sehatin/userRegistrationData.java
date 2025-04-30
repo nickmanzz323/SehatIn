@@ -1,8 +1,9 @@
 package com.example.sehatin;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class userRegistrationData {
+public class userRegistrationData implements Serializable {
     private String name;
     private String email;
     private String password;

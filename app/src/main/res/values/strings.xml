@@ -25,6 +25,12 @@
     <string name="registerGeneral_email">Email</string>
     <string name="registerGeneral_Save">Save</string>
     <string name="registerGeneral_Next">next</string>
+    <string name="RegisterGoal_LoseWeight">Lose Weight</string>
+    <string name="RegisterGoal_GainWeight">Gain Weight</string>
+    <string name="RegisterGoal_KeepWeight">Keep Weight</string>
+    <string name="RegisterGoal_Title">What\'s your Goal?</string>
+    <string name="RegisterGoal_Desc1">Kami akan melakukan kalkulasi kalori bedasarkan tujuan anda</string>
+    <string name="RegisterGoal_Back">Back</string>
 
     <!-- String untuk -->
 </resources>

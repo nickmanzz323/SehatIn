@@ -54,12 +54,7 @@ public class RegisterGeneral extends AppCompatActivity {
                 String password = String.valueOf(user_password.getText());
                 String email = String.valueOf(user_email.getText());
 
-                // Test DB, hapus jika selesai
-                databaseHelper db = new databaseHelper(RegisterGeneral.this);
-                db.insertUserData(1, name, email, password, "Male","Gain weight", "Active", 170, 75, 20, 2500);
-                Intent intent = new Intent(RegisterGeneral.this, RegisterGoal.class);
-                startActivity(intent);
-                finish();
+                moveToRegisterGoal(name, password, email);
             }
         });
     }
