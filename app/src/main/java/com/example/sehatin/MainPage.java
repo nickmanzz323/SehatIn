@@ -20,6 +20,8 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
+
 public class MainPage extends AppCompatActivity {
 
     private static final int REQUEST_CAMERA_PERMISSION = 100;
@@ -27,10 +29,16 @@ public class MainPage extends AppCompatActivity {
     private Uri photoUri;
     private File photoFile;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new RecommendFragment())
+                .commit();
 
         ImageView cameraButton = findViewById(R.id.camera_button); // pastikan ada button dengan id ini
 
@@ -87,6 +95,7 @@ public class MainPage extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Izin kamera ditolak", Toast.LENGTH_SHORT).show();
             }
+
         }
     }
 }

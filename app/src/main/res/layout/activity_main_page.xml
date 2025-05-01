@@ -407,4 +407,10 @@
         app:layout_constraintStart_toStartOf="@+id/imageView32"
         app:layout_constraintTop_toTopOf="@+id/imageView32" />
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
