@@ -36,18 +36,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_LoseWeight"
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:layout_marginTop="150dp"
         android:text="@string/RegisterGoal_LoseWeight"
+        android:textColor="@color/text_color2"
+        android:background="@drawable/button_unpressed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_GainWeight"
         android:layout_width="303dp"
         android:layout_height="50dp"
@@ -55,17 +57,21 @@
         android:layout_marginTop="15dp"
         android:layout_marginEnd="40dp"
         android:text="@string/RegisterGoal_GainWeight"
+        android:textColor="@color/text_color2"
+        android:background="@drawable/custom_reactive_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_KeepWeight" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_KeepWeight"
         android:layout_width="303dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:text="@string/RegisterGoal_KeepWeight"
+        android:textColor="@color/text_color2"
+        android:background="@drawable/custom_reactive_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,4 +88,15 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/nextButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/round_button"
+        android:text="@string/Right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

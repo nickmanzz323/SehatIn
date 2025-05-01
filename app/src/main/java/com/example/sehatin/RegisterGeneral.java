@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,13 +18,13 @@ import androidx.core.view.WindowInsetsCompat;
 public class RegisterGeneral extends AppCompatActivity {
 
     public void moveToRegisterGoal(String name, String password, String email){
-        userRegistrationData userData = new userRegistrationData();
-        userData.setName(name);
-        userData.setPassword(password);
-        userData.setEmail(email);
+        Intent senderIntent = new Intent(RegisterGeneral.this, RegisterCalorie.class);
+        senderIntent.putExtra("USER_NAME", name);
+        senderIntent.putExtra("USER_PASSWORD", password);
+        senderIntent.putExtra("USER_EMAIL", email);
 
-        Intent intent = new Intent(RegisterGeneral.this, RegisterGoal.class);
-        startActivity(intent);
+        Intent nextIntent = new Intent(RegisterGeneral.this, RegisterGoal.class);
+        startActivity(nextIntent);
     }
 
     @Override
@@ -33,6 +34,10 @@ public class RegisterGeneral extends AppCompatActivity {
 
         ImageView backButton = findViewById(R.id.prevButton);
         ImageView nextButton = findViewById(R.id.saveButton);
+
+        EditText user_name = findViewById(R.id.input_Name);
+        EditText user_password = findViewById(R.id.editTextTextPassword);
+        EditText user_email = findViewById(R.id.input_Email);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,15 +51,16 @@ public class RegisterGeneral extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText user_name = findViewById(R.id.input_Name);
-                EditText user_password = findViewById(R.id.editTextTextPassword);
-                EditText user_email = findViewById(R.id.input_Email);
+                String name = String.valueOf(user_name.getText().toString().trim());
+                String password = String.valueOf(user_password.getText().toString().trim());
+                String email = String.valueOf(user_email.getText().toString().trim());
 
-                String name = String.valueOf(user_name.getText());
-                String password = String.valueOf(user_password.getText());
-                String email = String.valueOf(user_email.getText());
-
-                moveToRegisterGoal(name, password, email);
+                if(name.isEmpty() || password.isEmpty() || email.isEmpty()){
+                    Toast.makeText(RegisterGeneral.this, "Box cant be empty!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    moveToRegisterGoal(name, password, email);
+                }
             }
         });
     }

@@ -31,6 +31,10 @@
     <string name="RegisterGoal_Title">What\'s your Goal?</string>
     <string name="RegisterGoal_Desc1">Kami akan melakukan kalkulasi kalori bedasarkan tujuan anda</string>
     <string name="RegisterGoal_Back">Back</string>
+    <string name="RegisterGender_Male">Male</string>
+    <string name="RegisterGender_Female">Female</string>
+    <string name="RegisterGender_title">What\'s your Gender?</string>
+    <string name="RegisterGender_Desc1">Laki-laki membutuhkan kalori lebih</string>
 
     <!-- String untuk -->
 </resources>
