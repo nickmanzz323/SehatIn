@@ -35,6 +35,23 @@
     <string name="RegisterGender_Female">Female</string>
     <string name="RegisterGender_title">What\'s your Gender?</string>
     <string name="RegisterGender_Desc1">Laki-laki membutuhkan kalori lebih</string>
+    <string name="RegisterActive_Title">How active are you?</string>
+    <string name="RegisterActive_Desc1">Seberapa aktif kegiatan anda dalam sehari?</string>
+    <string name="RegisterActive_Sedentary">Sedentary</string>
+    <string name="RegisterGoal_LowActive">Low Active</string>
+    <string name="RegisterActive_Active">Active</string>
+    <string name="RegisterActive_VeryActive">Very Active</string>
+    <string name="RegisterHeight_Desc1">Semakin tinggi badan semakin banyak juga kalori yang dibutuhkan</string>
+    <string name="RegisterHeight_Title">How tall are you?</string>
+    <string name="RegisterHeight_Meter">m</string>
+    <string name="RegisterHeight_CM">cm</string>
+    <string name="RegisterWeight_Title">What\'s your weight?</string>
+    <string name="RegisterWeight_Desc1">Semakin berat tubuh, maka tubuh perlu membakar kalori lebih</string>
+    <string name="kg">Kg</string>
+    <string name="RegisterWeight_Desc2">Masukkan berat badan</string>
+    <string name="RegisterAge_Title">What\'s your age?</string>
+    <string name="RegisterAge_Desc1">Jumlah kalori yang dibutuhkan bervariasi sesuai usia</string>
+    <string name="years">Years</string>
 
     <!-- String untuk -->
 </resources>

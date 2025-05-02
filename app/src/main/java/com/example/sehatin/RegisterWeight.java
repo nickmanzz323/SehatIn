@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.NumberPicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,29 +14,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class RegisterHeight extends AppCompatActivity {
+public class RegisterWeight extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_height);
+        setContentView(R.layout.activity_register_weight);
 
         TextView backButton = findViewById(R.id.backButton);
         Button nextButton = findViewById(R.id.nextButton);
 
-        NumberPicker nmb_Height1 = (NumberPicker) findViewById(R.id.nmb_Height);
-        NumberPicker nmb_Height2 = (NumberPicker) findViewById(R.id.nmb_Height2);
-
-        nmb_Height1.setMaxValue(3);
-        nmb_Height1.setMinValue(1);
-
-        nmb_Height2.setMaxValue(99);
-        nmb_Height2.setMinValue(0);
+        EditText weight = findViewById(R.id.editTextWeight);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterHeight.this, RegisterWeight.class);
+                Intent intent = new Intent(RegisterWeight.this, RegisterHeight.class);
                 startActivity(intent);
                 finish();
             }
@@ -45,17 +38,19 @@ public class RegisterHeight extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent senderIntent = new Intent(RegisterHeight.this, RegisterCalorie.class);
-                Intent nextIntent = new Intent(RegisterHeight.this, RegisterWeight.class);
+                String user_weight = String.valueOf(weight.getText().toString().trim());
+                Intent nextIntent = new Intent(RegisterWeight.this, RegisterAge.class);
+                Intent senderIntent = new Intent(RegisterWeight.this, RegisterCalorie.class);
 
-                int height = nmb_Height1.getValue() * 100 + nmb_Height2.getValue();
-                senderIntent.putExtra("USER_HEIGHT", String.valueOf(height));
-
-                startActivity(nextIntent);
-                finish();
+                if(user_weight.isEmpty()){
+                    Toast.makeText(RegisterWeight.this, "Can't be empty!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    senderIntent.putExtra("USER_WEIGHT", user_weight);
+                    startActivity(nextIntent);
+                    finish();
+                }
             }
         });
-
-
     }
 }

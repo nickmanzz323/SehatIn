@@ -91,6 +91,7 @@ public class RegisterGender extends AppCompatActivity {
                         startActivity(nextIntent);
                         finish();
                         break;
+
                 }
             }
         });
