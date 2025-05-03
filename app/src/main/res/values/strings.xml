@@ -52,6 +52,18 @@
     <string name="RegisterAge_Title">What\'s your age?</string>
     <string name="RegisterAge_Desc1">Jumlah kalori yang dibutuhkan bervariasi sesuai usia</string>
     <string name="years">Years</string>
+    <string name="BottomSheet_Done">Dismiss</string>
+    <string name="BottomSheet_DoneButton">Done</string>
+    <string name="calories">Calories</string>
+    <string name="Bottom_Sheet_Title">Daily calorie intake</string>
+    <string name="BottomSheet_EditText">Enter your calories</string>
+    <string name="recommended">Recommended:</string>
+    <string name="RegisterCalorie_Calories">Calories</string>
+    <string name="RegisterCalorie_Title">Calorie Intake</string>
+    <string name="RegisterCalorie_Protein">Protein</string>
+    <string name="RegisterCalorie_Fats">Fats</string>
+    <string name="RegisterCalorie_Carbs">Carbs</string>
+    <string name="RegisterCalorie_Done">Done</string>
 
     <!-- String untuk -->
 </resources>
