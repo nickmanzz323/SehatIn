@@ -18,12 +18,10 @@ import androidx.core.view.WindowInsetsCompat;
 public class RegisterGeneral extends AppCompatActivity {
 
     public void moveToRegisterGoal(String name, String password, String email){
-        Intent senderIntent = new Intent(RegisterGeneral.this, RegisterCalorie.class);
-        senderIntent.putExtra("USER_NAME", name);
-        senderIntent.putExtra("USER_PASSWORD", password);
-        senderIntent.putExtra("USER_EMAIL", email);
-
         Intent nextIntent = new Intent(RegisterGeneral.this, RegisterGoal.class);
+        nextIntent.putExtra("USER_NAME", name);
+        nextIntent.putExtra("USER_PASSWORD", password);
+        nextIntent.putExtra("USER_EMAIL", email);
         startActivity(nextIntent);
     }
 

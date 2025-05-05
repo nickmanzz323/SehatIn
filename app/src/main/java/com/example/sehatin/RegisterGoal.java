@@ -16,7 +16,6 @@ public class RegisterGoal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_goal);
 
-
         TextView backButton = findViewById(R.id.backButton);
         Button nextButton = findViewById(R.id.nextButton);
 
@@ -92,7 +91,7 @@ public class RegisterGoal extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent senderIntent = new Intent(RegisterGoal.this, RegisterCalorie.class);
+                Intent intent = getIntent();
                 Intent nextIntent = new Intent(RegisterGoal.this, RegisterGender.class);
 
                 switch(option){
@@ -101,19 +100,28 @@ public class RegisterGoal extends AppCompatActivity {
                         break;
 
                     case 1:
-                        senderIntent.putExtra("USER_GOAL", "Loose Weight");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", "Loose Weight");
                         startActivity(nextIntent);
                         finish();
                         break;
 
                     case 2:
-                        senderIntent.putExtra("USER_GOAL", "Keep Weight");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", "Keep Weight");
                         startActivity(nextIntent);
                         finish();
                         break;
 
                     case 3:
-                        senderIntent.putExtra("USER_GOAL", "Gain Weight");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", "Gain Weight");
                         startActivity(nextIntent);
                         finish();
                         break;

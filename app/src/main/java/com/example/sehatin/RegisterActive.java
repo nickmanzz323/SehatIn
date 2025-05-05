@@ -139,7 +139,7 @@ public class RegisterActive extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent senderIntent = new Intent(RegisterActive.this, RegisterCalorie.class);
+                Intent intent = getIntent();
                 Intent nextIntent = new Intent(RegisterActive.this, RegisterHeight.class);
 
                 switch(option){
@@ -148,25 +148,45 @@ public class RegisterActive extends AppCompatActivity {
                         break;
 
                     case 1:
-                        senderIntent.putExtra("USER_ACTIVE", "Sedentary");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", intent.getStringExtra("USER_GOAL"));
+                        nextIntent.putExtra("USER_GENDER", intent.getStringExtra("USER_GENDER"));
+                        nextIntent.putExtra("USER_ACTIVE", "Sedentary");
                         startActivity(nextIntent);
                         finish();
                         break;
 
                     case 2:
-                        senderIntent.putExtra("USER_ACTIVE", "Low Active");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", intent.getStringExtra("USER_GOAL"));
+                        nextIntent.putExtra("USER_GENDER", intent.getStringExtra("USER_GENDER"));
+                        nextIntent.putExtra("USER_ACTIVE", "Low Active");
                         startActivity(nextIntent);
                         finish();
                         break;
 
                     case 3:
-                        senderIntent.putExtra("USER_ACTIVE", "Active");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", intent.getStringExtra("USER_GOAL"));
+                        nextIntent.putExtra("USER_GENDER", intent.getStringExtra("USER_GENDER"));
+                        nextIntent.putExtra("USER_ACTIVE", "Active");
                         startActivity(nextIntent);
                         finish();
                         break;
 
                     case 4:
-                        senderIntent.putExtra("USER_ACTIVE", "Very Active");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", intent.getStringExtra("USER_GOAL"));
+                        nextIntent.putExtra("USER_GENDER", intent.getStringExtra("USER_GENDER"));
+                        nextIntent.putExtra("USER_ACTIVE", "Very Active");
                         startActivity(nextIntent);
                         finish();
                         break;

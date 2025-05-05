@@ -72,7 +72,7 @@ public class RegisterGender extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent senderIntent = new Intent(RegisterGender.this, RegisterCalorie.class);
+                Intent intent = getIntent();
                 Intent nextIntent = new Intent(RegisterGender.this, RegisterActive.class);
 
                 switch(option){
@@ -81,13 +81,21 @@ public class RegisterGender extends AppCompatActivity {
                         break;
 
                     case 1:
-                        senderIntent.putExtra("USER_GENDER", "Male");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", intent.getStringExtra("USER_GOAL"));
+                        nextIntent.putExtra("USER_GENDER", "Male");
                         startActivity(nextIntent);
                         finish();
                         break;
 
                     case 2:
-                        senderIntent.putExtra("USER_GENDER", "Female");
+                        nextIntent.putExtra("USER_NAME", intent.getStringExtra("USER_NAME"));
+                        nextIntent.putExtra("USER_EMAIL", intent.getStringExtra("USER_EMAIL"));
+                        nextIntent.putExtra("USER_PASSWORD", intent.getStringExtra("USER_PASSWORD"));
+                        nextIntent.putExtra("USER_GOAL", intent.getStringExtra("USER_GOAL"));
+                        nextIntent.putExtra("USER_GENDER", "Female");
                         startActivity(nextIntent);
                         finish();
                         break;
