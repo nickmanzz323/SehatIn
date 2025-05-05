@@ -53,6 +53,8 @@ public class RegisterCalorie extends AppCompatActivity {
         TextView text_userCarbs = findViewById(R.id.text_userCarbs);
         TextView text_userFats = findViewById(R.id.text_userFats);
 
+        Button doneButton = findViewById(R.id.button);
+
         if (user_gender.equals("Female")) {
             user_calorie = (int) (655.1 + (9.563 * user_weight) + (1.850 * user_height) - (4.676 * user_age));
         } else {
