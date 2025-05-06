@@ -83,15 +83,12 @@ public class RegisterCalorie extends AppCompatActivity {
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("RegisterCalorie", "USER_NAME: " + user_name);
-                Log.d("RegisterCalorie", "USER_EMAIL: " + user_email);
-                Log.d("RegisterCalorie", "USER_PASSWORD: " + user_password);
-                Log.d("RegisterCalorie", "USER_ACTIVE: " + user_active);
-                Log.d("RegisterCalorie", "USER_GOAL: " + user_goal);
-                Log.d("RegisterCalorie", "USER_GENDER: " + user_gender);
-                Log.d("RegisterCalorie", "USER_AGE: " + user_age);
-                Log.d("RegisterCalorie", "USER_WEIGHT: " + user_weight);
-                Log.d("RegisterCalorie", "USER_HEIGHT: " + user_height);
+                Intent intent = new Intent(RegisterCalorie.this, MainPage.class);
+                databaseHelper myDB = new databaseHelper(RegisterCalorie.this);
+                int temp = Integer.parseInt((String) text_userCalorie.getText());
+                myDB.insertUserData(2, user_name, user_email, user_password, user_gender, user_goal, user_active, user_height, user_weight, user_age, temp);
+                startActivity(intent);
+                finish();
             }
         });
 
