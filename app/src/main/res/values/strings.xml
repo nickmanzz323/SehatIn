@@ -64,6 +64,8 @@
     <string name="RegisterCalorie_Fats">Fats</string>
     <string name="RegisterCalorie_Carbs">Carbs</string>
     <string name="RegisterCalorie_Done">Done</string>
+    <string name="cal">Cal</string>
+    <string name="gram">Gram</string>
 
     <!-- String untuk -->
 </resources>

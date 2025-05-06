@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -65,10 +66,10 @@ public class RegisterCalorie extends AppCompatActivity {
         int user_carbs = (int) ((user_calorie * 0.6) / 4);
         int user_fats = (int) ((user_calorie * 0.15) / 4);
 
-        text_userCalorie.setText(String.format("%d Cal", user_calorie));
-        text_userProtein.setText(String.format("%d Gram", user_protein));
-        text_userFats.setText(String.format("%d Gram", user_fats));
-        text_userCarbs.setText(String.format("%d Gram", user_carbs));
+        text_userCalorie.setText(String.valueOf(user_calorie));
+        text_userProtein.setText(String.valueOf(user_protein));
+        text_userFats.setText(String.valueOf(user_fats));
+        text_userCarbs.setText(String.valueOf(user_carbs));
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +77,21 @@ public class RegisterCalorie extends AppCompatActivity {
                 Intent intent = new Intent(RegisterCalorie.this, RegisterAge.class);
                 startActivity(intent);
                 finish();
+            }
+        });
+
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("RegisterCalorie", "USER_NAME: " + user_name);
+                Log.d("RegisterCalorie", "USER_EMAIL: " + user_email);
+                Log.d("RegisterCalorie", "USER_PASSWORD: " + user_password);
+                Log.d("RegisterCalorie", "USER_ACTIVE: " + user_active);
+                Log.d("RegisterCalorie", "USER_GOAL: " + user_goal);
+                Log.d("RegisterCalorie", "USER_GENDER: " + user_gender);
+                Log.d("RegisterCalorie", "USER_AGE: " + user_age);
+                Log.d("RegisterCalorie", "USER_WEIGHT: " + user_weight);
+                Log.d("RegisterCalorie", "USER_HEIGHT: " + user_height);
             }
         });
 
@@ -90,7 +106,7 @@ public class RegisterCalorie extends AppCompatActivity {
                 EditText newUserCalorie = view1.findViewById(R.id.editTextCalories);
                 TextView recomendCalorie = view1.findViewById(R.id.textViewRecommendation);
                 Button changeButton = view1.findViewById(R.id.btnDone);
-                recomendCalorie.setText(String.format("Recommended: %d Cal", user_calorie));
+                recomendCalorie.setText(String.format("Recommended: %d", user_calorie));
 
                 changeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -103,12 +119,12 @@ public class RegisterCalorie extends AppCompatActivity {
                         else{
                             int user_protein = (int) ((input * 0.25) / 4);
                             int user_carbs = (int) ((input * 0.6) / 4);
-                            int user_fats = (int) ((user_calorie * 0.15) / 4);
+                            int user_fats = (int) ((input * 0.15) / 4);
 
-                            text_userCalorie.setText(String.format("%d Cal", input));
-                            text_userProtein.setText(String.format("%d Gram", user_protein));
-                            text_userFats.setText(String.format("%d Gram", user_fats));
-                            text_userCarbs.setText(String.format("%d Gram", user_carbs));
+                            text_userCalorie.setText(String.valueOf(input));
+                            text_userProtein.setText(String.valueOf(user_protein));
+                            text_userFats.setText(String.valueOf(user_fats));
+                            text_userCarbs.setText(String.valueOf(user_carbs));
                             bottomSheetDialog.dismiss();
                         }
                     }
