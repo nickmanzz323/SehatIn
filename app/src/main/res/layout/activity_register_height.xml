@@ -12,11 +12,11 @@
         android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="96dp"
         android:text="@string/RegisterHeight_Title"
-        android:textSize="25sp"
-        android:textColor="@color/text_color2"
         android:textAlignment="center"
+        android:textColor="@color/text_color2"
+        android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,20 +31,20 @@
         android:text="@string/RegisterHeight_Desc1"
         android:textAlignment="center"
         android:textColor="@color/text_color1"
-        android:textSize="15sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Title" />
 
     <TextView
         android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="56dp"
         android:text="@string/RegisterGoal_Back"
         android:textColor="@color/text_color1"
-        android:textSize="15sp"
+        android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -55,6 +55,8 @@
         android:layout_marginStart="72dp"
         android:layout_marginTop="108dp"
         android:layout_marginEnd="120dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/nmb_Height"
         app:layout_constraintTop_toBottomOf="@+id/description" />
@@ -65,15 +67,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="100dp"
         android:layout_marginTop="112dp"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/round_button"
         android:text="@string/Right"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -12,131 +12,133 @@
         android:id="@+id/text_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="88dp"
         android:text="@string/RegisterCalorie_Title"
         android:textColor="@color/text_color2"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_Calories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/RegisterCalorie_Calories"
-        android:textColor="@color/text_color1"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Title" />
-
-    <TextView
-        android:id="@+id/text_Protein"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/RegisterCalorie_Protein"
-        android:textSize="15sp"
-        android:textColor="@color/text_color1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Calories" />
-
-    <TextView
-        android:id="@+id/text_Fats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/RegisterCalorie_Fats"
-        android:textColor="@color/text_color1"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Protein" />
-
-    <TextView
-        android:id="@+id/text_Carbs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/RegisterCalorie_Carbs"
-        android:textColor="@color/text_color1"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_Fats" />
-
-    <TextView
-        android:id="@+id/text_userCalories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:text="TextView"
-        android:textSize="15sp"
-        android:textColor="@color/button_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.942"
-        app:layout_constraintStart_toEndOf="@+id/text_Calories"
-        app:layout_constraintTop_toBottomOf="@+id/text_Title" />
-
-    <TextView
-        android:id="@+id/text_userProtein"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:text="TextView"
-        android:textColor="@color/button_color"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
-        app:layout_constraintStart_toEndOf="@+id/text_Protein"
-        app:layout_constraintTop_toBottomOf="@+id/text_userCalories" />
 
     <TextView
         android:id="@+id/text_userFats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="20dp"
         android:text="TextView"
         android:textColor="@color/button_color"
-        android:textSize="15sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintHorizontal_bias="0.964"
         app:layout_constraintStart_toEndOf="@+id/text_Fats"
         app:layout_constraintTop_toBottomOf="@+id/text_userProtein" />
+
+    <TextView
+        android:id="@+id/text_Calories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/RegisterCalorie_Calories"
+        android:textColor="@color/text_color1"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Title" />
+
+    <TextView
+        android:id="@+id/text_Carbs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/RegisterCalorie_Carbs"
+        android:textColor="@color/text_color1"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Fats" />
+
+    <TextView
+        android:id="@+id/text_Protein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="28dp"
+        android:text="@string/RegisterCalorie_Protein"
+        android:textColor="@color/text_color1"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Calories" />
+
+    <TextView
+        android:id="@+id/text_userProtein"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textColor="@color/button_color"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintStart_toEndOf="@+id/text_Protein"
+        app:layout_constraintTop_toBottomOf="@+id/text_userCalories" />
+
+    <TextView
+        android:id="@+id/text_userCalories"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textColor="@color/button_color"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toEndOf="@+id/text_Calories"
+        app:layout_constraintTop_toBottomOf="@+id/text_Title" />
+
+    <TextView
+        android:id="@+id/text_Fats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/RegisterCalorie_Fats"
+        android:textColor="@color/text_color1"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_Protein" />
 
     <TextView
         android:id="@+id/text_userCarbs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:text="TextView"
         android:textColor="@color/button_color"
-        android:textSize="15sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toEndOf="@+id/text_Carbs"
         app:layout_constraintTop_toBottomOf="@+id/text_userFats" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="303dp"
-        android:layout_height="50dp"
+        android:layout_width="316dp"
+        android:layout_height="81dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/button_color"
         android:text="@string/RegisterCalorie_Done"
         android:textColor="@color/text_color1"
         android:textSize="15sp"
-        android:backgroundTint="@color/button_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -144,12 +146,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="88dp"
         android:text="@string/Left"
         android:textColor="@color/text_color1"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toStartOf="@+id/text_Title"
-        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintHorizontal_bias="0.307"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
