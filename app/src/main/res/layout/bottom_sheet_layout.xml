@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/BottomSheet_EditText"
         android:inputType="number"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textColorHint="@color/on_background"
         android:backgroundTint="@color/button_color"
         android:padding="12dp"
