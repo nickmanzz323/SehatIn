@@ -2,13 +2,16 @@ package com.example.sehatin;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,12 +38,33 @@ public class MainPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_container, new RecommendFragment())
-                .commit();
+        TextView usernameTextView = findViewById(R.id.usernameTextView);
 
-        ImageView cameraButton = findViewById(R.id.camera_button); // pastikan ada button dengan id ini
+        // Ambil dari Intent
+        String userName = getIntent().getStringExtra("USER_NAME");
+
+        // Jika dari Intent tidak ada, ambil dari SharedPreferences
+        if (userName == null || userName.isEmpty()) {
+            SharedPreferences sharedPref = getSharedPreferences("user_data", MODE_PRIVATE);
+            userName = sharedPref.getString("USER_NAME", "Username");
+        }
+
+        // Setel nama ke TextView
+        usernameTextView.setText(userName);
+
+        // ketika tombol recommend diklik akan membuka fragment recommend
+        ImageView recommendButton = findViewById(R.id.recommend_button);
+
+        recommendButton.setOnClickListener(v -> {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new RecommendFragment())
+                    .addToBackStack(null)
+                    .commit();
+        });
+
+
+        ImageView cameraButton = findViewById(R.id.camera_button);
 
         cameraButton.setOnClickListener(v -> {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
