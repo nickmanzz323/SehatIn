@@ -1,11 +1,7 @@
 package com.example.sehatin;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -13,18 +9,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.google.android.material.textfield.TextInputLayout;
-
-import org.w3c.dom.Text;
-
-import java.util.Objects;
 
 public class RegisterCalorie extends AppCompatActivity {
 
@@ -46,6 +33,7 @@ public class RegisterCalorie extends AppCompatActivity {
         int user_age = recieverIntent.getIntExtra("USER_AGE", 0);
         int user_weight = recieverIntent.getIntExtra("USER_WEIGHT", 0);
         int user_height = recieverIntent.getIntExtra("USER_HEIGHT", 0);
+
         int user_calorie;
         TextView backButton = findViewById(R.id.backButton);
 
@@ -56,21 +44,25 @@ public class RegisterCalorie extends AppCompatActivity {
 
         Button doneButton = findViewById(R.id.button);
 
+        // Hitung BMR (kalori dasar)
         if (user_gender.equals("Female")) {
             user_calorie = (int) (655.1 + (9.563 * user_weight) + (1.850 * user_height) - (4.676 * user_age));
         } else {
             user_calorie = (int) (66.5 + (13.75 * user_weight) + (5.003 * user_height) - (6.75 * user_age));
         }
 
+        // ini buat hitung
         int user_protein = (int) ((user_calorie * 0.25) / 4);
         int user_carbs = (int) ((user_calorie * 0.6) / 4);
         int user_fats = (int) ((user_calorie * 0.15) / 4);
 
+        //  Display hasil
         text_userCalorie.setText(String.valueOf(user_calorie));
         text_userProtein.setText(String.valueOf(user_protein));
         text_userFats.setText(String.valueOf(user_fats));
         text_userCarbs.setText(String.valueOf(user_carbs));
 
+        // Tombol kembali
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -80,18 +72,32 @@ public class RegisterCalorie extends AppCompatActivity {
             }
         });
 
+        // Tombol done (save)
         doneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegisterCalorie.this, MainPage.class);
+                int inputCalorie = Integer.parseInt(text_userCalorie.getText().toString());
+                int updatedProtein = (int) ((inputCalorie * 0.25) / 4);
+                int updatedCarbs = (int) ((inputCalorie * 0.6) / 4);
+                int updatedFats = (int) ((inputCalorie * 0.15) / 4);
+
                 databaseHelper myDB = new databaseHelper(RegisterCalorie.this);
-                int temp = Integer.parseInt((String) text_userCalorie.getText());
-                myDB.insertUserData(2, user_name, user_email, user_password, user_gender, user_goal, user_active, user_height, user_weight, user_age, temp);
+                myDB.insertUserData(2, user_name, user_email, user_password, user_gender, user_goal, user_active,
+                        user_height, user_weight, user_age, inputCalorie);
+
+                // Kirim data ke MainPage
+                Intent intent = new Intent(RegisterCalorie.this, MainPage.class);
+                intent.putExtra("USER_NAME", user_name);
+                intent.putExtra("CALORIES", inputCalorie);
+                intent.putExtra("PROTEIN", updatedProtein);
+                intent.putExtra("CARBS", updatedCarbs);
+                intent.putExtra("FATS", updatedFats);
                 startActivity(intent);
                 finish();
             }
         });
 
+        // Bottom sheet untuk mengubah kalori manual
         text_userCalorie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,25 +109,26 @@ public class RegisterCalorie extends AppCompatActivity {
                 EditText newUserCalorie = view1.findViewById(R.id.editTextCalories);
                 TextView recomendCalorie = view1.findViewById(R.id.textViewRecommendation);
                 Button changeButton = view1.findViewById(R.id.btnDone);
+
                 recomendCalorie.setText(String.format("Recommended: %d", user_calorie));
 
                 changeButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        int input = 0;
-                        input = Integer.valueOf(newUserCalorie.getText().toString().trim());
-                        if(input == 0){
+                        String inputStr = newUserCalorie.getText().toString().trim();
+                        if (inputStr.isEmpty() || Integer.parseInt(inputStr) == 0) {
                             Toast.makeText(RegisterCalorie.this, "Can't be empty!", Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            int user_protein = (int) ((input * 0.25) / 4);
-                            int user_carbs = (int) ((input * 0.6) / 4);
-                            int user_fats = (int) ((input * 0.15) / 4);
+                        } else {
+                            int input = Integer.parseInt(inputStr);
+                            int newProtein = (int) ((input * 0.25) / 4);
+                            int newCarbs = (int) ((input * 0.6) / 4);
+                            int newFats = (int) ((input * 0.15) / 4);
 
                             text_userCalorie.setText(String.valueOf(input));
-                            text_userProtein.setText(String.valueOf(user_protein));
-                            text_userFats.setText(String.valueOf(user_fats));
-                            text_userCarbs.setText(String.valueOf(user_carbs));
+                            text_userProtein.setText(String.valueOf(newProtein));
+                            text_userFats.setText(String.valueOf(newFats));
+                            text_userCarbs.setText(String.valueOf(newCarbs));
+
                             bottomSheetDialog.dismiss();
                         }
                     }

@@ -9,21 +9,20 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-
 
 public class MainPage extends AppCompatActivity {
 
@@ -32,29 +31,48 @@ public class MainPage extends AppCompatActivity {
     private Uri photoUri;
     private File photoFile;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+        // Ambil semua TextView dari layout
         TextView usernameTextView = findViewById(R.id.usernameTextView);
+        TextView caloriesMax = findViewById(R.id.caloriesMax);
+        TextView proteinMax = findViewById(R.id.proteinMax);
+        TextView carbsMax = findViewById(R.id.carbsMax);
+        TextView fatMax = findViewById(R.id.fatsMax);
+        TextView heightView = findViewById(R.id.heightView);
+        TextView weightView = findViewById(R.id.weightView);
 
-        // Ambil dari Intent
-        String userName = getIntent().getStringExtra("USER_NAME");
+        // Ambil data dari Intent
+        Intent intent = getIntent();
+        String userName = intent.getStringExtra("USER_NAME");
+        int calories = intent.getIntExtra("CALORIES", 0);
+        int protein = intent.getIntExtra("PROTEIN", 0);
+        int carbs = intent.getIntExtra("CARBS", 0);
+        int fats = intent.getIntExtra("FATS", 0);
+        int height = intent.getIntExtra("USER_HEIGHT", 0);
+        int weight = intent.getIntExtra("USER_WEIGHT", 0);
+        int age = intent.getIntExtra("USER_AGE", 0);
 
-        // Jika dari Intent tidak ada, ambil dari SharedPreferences
+        // Jika tidak ada data dari Intent, ambil dari SharedPreferences
         if (userName == null || userName.isEmpty()) {
             SharedPreferences sharedPref = getSharedPreferences("user_data", MODE_PRIVATE);
             userName = sharedPref.getString("USER_NAME", "Username");
         }
 
-        // Setel nama ke TextView
+        // Setel data ke TextView
         usernameTextView.setText(userName);
+        caloriesMax.setText(String.valueOf(calories));
+        proteinMax.setText(String.valueOf(protein));
+        carbsMax.setText(String.valueOf(carbs));
+        fatMax.setText(String.valueOf(fats));
+        heightView.setText(String.valueOf(height));
+        weightView.setText(String.valueOf(weight));
 
-        // ketika tombol recommend diklik akan membuka fragment recommend
+        // Tombol rekomendasi membuka fragment
         ImageView recommendButton = findViewById(R.id.recommend_button);
-
         recommendButton.setOnClickListener(v -> {
             getSupportFragmentManager()
                     .beginTransaction()
@@ -63,9 +81,8 @@ public class MainPage extends AppCompatActivity {
                     .commit();
         });
 
-
+        // Tombol kamera
         ImageView cameraButton = findViewById(R.id.camera_button);
-
         cameraButton.setOnClickListener(v -> {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                     != PackageManager.PERMISSION_GRANTED) {
@@ -87,7 +104,6 @@ public class MainPage extends AppCompatActivity {
                     photoUri = FileProvider.getUriForFile(this,
                             getPackageName() + ".provider",
                             photoFile);
-
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
                     takePictureIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
                     startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
@@ -119,7 +135,6 @@ public class MainPage extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Izin kamera ditolak", Toast.LENGTH_SHORT).show();
             }
-
         }
     }
 }
