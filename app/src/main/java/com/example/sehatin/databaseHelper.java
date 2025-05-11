@@ -45,7 +45,6 @@ public class databaseHelper extends SQLiteOpenHelper{
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put("userID", userID);
         cv.put("name", name);
         cv.put("email", email);
         cv.put("password", password);
@@ -58,6 +57,7 @@ public class databaseHelper extends SQLiteOpenHelper{
         cv.put("calorieIntake", calorieIntake);
 
         long result = db.insert("userData", null, cv);
+
         if(result == -1){
             Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
         }
@@ -66,3 +66,4 @@ public class databaseHelper extends SQLiteOpenHelper{
         }
     }
 }
+

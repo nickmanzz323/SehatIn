@@ -86,7 +86,7 @@ public class RegisterCalorie extends AppCompatActivity {
                 Intent intent = new Intent(RegisterCalorie.this, MainPage.class);
                 databaseHelper myDB = new databaseHelper(RegisterCalorie.this);
                 int temp = Integer.parseInt((String) text_userCalorie.getText());
-                myDB.insertUserData(2, user_name, user_email, user_password, user_gender, user_goal, user_active, user_height, user_weight, user_age, temp);
+                myDB.insertUserData(3, user_name, user_email, user_password, user_gender, user_goal, user_active, user_height, user_weight, user_age, temp);
                 startActivity(intent);
                 finish();
             }
