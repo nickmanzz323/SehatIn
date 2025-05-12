@@ -66,35 +66,27 @@ public class RegisterCalorie extends AppCompatActivity {
         });
 
         // Tombol selesai
-        doneButton.setOnClickListener(v -> {
-            Intent intent = new Intent(RegisterCalorie.this, MainPage.class);
-
-            // Kirim semua data ke MainPage
-            intent.putExtra("USER_NAME", user_name);
-            intent.putExtra("USER_HEIGHT", user_height);
-            intent.putExtra("USER_WEIGHT", user_weight);
-            intent.putExtra("CALORIES", Integer.parseInt(text_userCalorie.getText().toString()));
-            intent.putExtra("PROTEIN", Integer.parseInt(text_userProtein.getText().toString()));
-            intent.putExtra("CARBS", Integer.parseInt(text_userCarbs.getText().toString()));
-            intent.putExtra("FATS", Integer.parseInt(text_userFats.getText().toString()));
-
-            // Simpan ke database
-            databaseHelper myDB = new databaseHelper(RegisterCalorie.this);
-            myDB.insertUserData(
-                    user_name,
-                    user_email,
-                    user_password,
-                    user_gender,
-                    user_goal,
-                    user_active,
-                    user_height,
-                    user_weight,
-                    user_age,
-                    Integer.parseInt(text_userCalorie.getText().toString())
-            );
-
-            startActivity(intent);
-            finish();
+        doneButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterCalorie.this, LoginPage.class);
+                // Simpan ke database
+                databaseHelper myDB = new databaseHelper(RegisterCalorie.this);
+                myDB.insertUserData(
+                        user_name,
+                        user_email,
+                        user_password,
+                        user_gender,
+                        user_goal,
+                        user_active,
+                        user_height,
+                        user_weight,
+                        user_age,
+                        Integer.parseInt(text_userCalorie.getText().toString())
+                );
+                startActivity(intent);
+                finish();
+            }
         });
 
         // Edit manual kalori
