@@ -40,7 +40,7 @@
         app:srcCompat="@drawable/sportslogo" />
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/foodRecommend"
         android:layout_width="140dp"
         android:layout_height="160dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
