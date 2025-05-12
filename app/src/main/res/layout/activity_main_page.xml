@@ -411,8 +411,9 @@
         app:layout_constraintTop_toTopOf="@+id/imageView9"
         app:layout_constraintVertical_bias="0.671" />
 
-    <ImageView
-        android:id="@+id/imageView23"
+    <ProgressBar
+        android:id="@+id/caloriesBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="313dp"
         android:layout_height="26dp"
         android:src="@drawable/caloriesintakebar"
@@ -436,8 +437,9 @@
         app:layout_constraintTop_toTopOf="@+id/imageView8"
         app:layout_constraintVertical_bias="0.936" />
 
-    <ImageView
-        android:id="@+id/imageView26"
+    <ProgressBar
+        android:id="@+id/proteinBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="87dp"
         android:layout_height="6dp"
         android:src="@drawable/minibar"
@@ -448,8 +450,9 @@
         app:layout_constraintTop_toTopOf="@+id/imageView8"
         app:layout_constraintVertical_bias="0.239" />
 
-    <ImageView
-        android:id="@+id/imageView29"
+    <ProgressBar
+        android:id="@+id/fatsBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="87dp"
         android:layout_height="6dp"
         android:src="@drawable/minibar"
@@ -460,8 +463,9 @@
         app:layout_constraintTop_toTopOf="@+id/imageView8"
         app:layout_constraintVertical_bias="0.246" />
 
-    <ImageView
-        android:id="@+id/imageView30"
+    <ProgressBar
+        android:id="@+id/carbsBar"
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="90dp"
         android:layout_height="6dp"
         android:src="@drawable/minibar"
@@ -624,7 +628,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="1.0">
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
