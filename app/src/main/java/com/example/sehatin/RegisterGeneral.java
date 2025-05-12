@@ -57,7 +57,15 @@ public class RegisterGeneral extends AppCompatActivity {
                     Toast.makeText(RegisterGeneral.this, "Box cant be empty!", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    moveToRegisterGoal(name, password, email);
+                    databaseHelper db = new databaseHelper(RegisterGeneral.this);
+                    Boolean checkEmail = db.checkEmail(email);
+                    if(!checkEmail){
+                        moveToRegisterGoal(name, password, email);
+                    }
+                    else{
+                        Toast.makeText(RegisterGeneral.this, "Email already used!", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });

@@ -81,7 +81,6 @@ public class RegisterCalorie extends AppCompatActivity {
             // Simpan ke database
             databaseHelper myDB = new databaseHelper(RegisterCalorie.this);
             myDB.insertUserData(
-                    3,
                     user_name,
                     user_email,
                     user_password,

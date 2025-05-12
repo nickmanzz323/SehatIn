@@ -48,12 +48,13 @@ public class MainPage extends AppCompatActivity {
         // Ambil data dari Intent
         Intent intent = getIntent();
         String userName = intent.getStringExtra("USER_NAME");
-        int calories = intent.getIntExtra("CALORIES", 0);
-        int protein = intent.getIntExtra("PROTEIN", 0);
-        int carbs = intent.getIntExtra("CARBS", 0);
-        int fats = intent.getIntExtra("FATS", 0);
-        int height = intent.getIntExtra("USER_HEIGHT", 0);
-        int weight = intent.getIntExtra("USER_WEIGHT", 0);
+        String calories = intent.getStringExtra("USER_CALORIE_INTAKE");
+        int calculateCalories = Integer.parseInt(calories);
+        int protein = (int) ((calculateCalories * 0.25) / 4);
+        int carbs = (int) ((calculateCalories * 0.6) / 4);
+        int fats = (int) ((calculateCalories * 0.15) / 4);
+        String height = intent.getStringExtra("USER_HEIGHT");
+        String weight = intent.getStringExtra("USER_WEIGHT");
         int age = intent.getIntExtra("USER_AGE", 0);
 
         // Jika tidak ada data dari Intent, ambil dari SharedPreferences
@@ -64,12 +65,12 @@ public class MainPage extends AppCompatActivity {
 
         // Setel data ke TextView
         usernameTextView.setText(userName);
-        caloriesMax.setText(String.valueOf(calories));
+        caloriesMax.setText(calories);
         proteinMax.setText(String.valueOf(protein));
         carbsMax.setText(String.valueOf(carbs));
         fatMax.setText(String.valueOf(fats));
-        heightView.setText(String.valueOf(height));
-        weightView.setText(String.valueOf(weight));
+        heightView.setText(height);
+        weightView.setText(weight);
 
         // Tombol rekomendasi membuka fragment
         ImageView recommendButton = findViewById(R.id.recommend_button);

@@ -48,7 +48,7 @@ public class Intro_Page extends AppCompatActivity {
             editor.putBoolean(prevStarted, Boolean.TRUE);
             editor.apply();
         } else {
-            Intent i = new Intent(Intro_Page.this,WelcomePage.class);
+            Intent i = new Intent(Intro_Page.this, LoginPage.class);
             startActivity(i);
         }
     }

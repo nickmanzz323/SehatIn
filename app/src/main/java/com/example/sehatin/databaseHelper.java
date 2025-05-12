@@ -41,7 +41,7 @@ public class databaseHelper extends SQLiteOpenHelper{
         // onCreate(db);
     }
 
-    public void insertUserData(int userID, String name, String email, String password, String gender, String goal, String active, int height, int weight, int age, int calorieIntake){
+    public void insertUserData(String name, String email, String password, String gender, String goal, String active, int height, int weight, int age, int calorieIntake){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -64,6 +64,27 @@ public class databaseHelper extends SQLiteOpenHelper{
         else{
             Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public Boolean checkEmail(String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from userData where email = ?", new String[]{email});
+        return cursor.getCount() > 0;
+    }
+
+    public Boolean checkUserPassword(String email, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from userData where email = ? and password = ?", new String[] {email, password});
+        return cursor.getCount() > 0;
+    }
+
+    Cursor searchUserData(String email, String password){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        if(db != null){
+            cursor = db.rawQuery("SELECT * FROM userData WHERE email = ? AND password = ?", new String[] {email, password});
+        }
+        return cursor;
     }
 }
 
