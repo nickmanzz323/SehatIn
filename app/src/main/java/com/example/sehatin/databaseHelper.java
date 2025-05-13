@@ -21,7 +21,7 @@ public class databaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createUserDatabase = "CREATE TABLE userData (UserID INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255), email VARCHAR(255), password VARCHAR(255), goal VARCHAR(50), gender VARCHAR(5), active VARCHAR(15), height INT, weight INT, age INT, calorieIntake INT);";
+        String createUserDatabase = "CREATE TABLE userData (UserID INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(255), email VARCHAR(255), password VARCHAR(255), goal VARCHAR(50), gender VARCHAR(5), active VARCHAR(15), height INT, weight INT, age INT, calorieIntake INT, proteinIntake INT, fatIntake INT, carbIntake INT);";
         db.execSQL(createUserDatabase);
 
         // Buat query untuk tabel baru disini
@@ -41,7 +41,7 @@ public class databaseHelper extends SQLiteOpenHelper{
         // onCreate(db);
     }
 
-    public void insertUserData(String name, String email, String password, String gender, String goal, String active, int height, int weight, int age, int calorieIntake){
+    public void insertUserData(String name, String email, String password, String gender, String goal, String active, int height, int weight, int age, int calorieIntake, int proteinIntake, int fatIntake, int carbIntake){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -55,6 +55,9 @@ public class databaseHelper extends SQLiteOpenHelper{
         cv.put("weight", weight);
         cv.put("age", age);
         cv.put("calorieIntake", calorieIntake);
+        cv.put("proteinIntake", proteinIntake);
+        cv.put("fatIntake", fatIntake);
+        cv.put("carbIntake", carbIntake);
 
         long result = db.insert("userData", null, cv);
 

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -47,30 +48,36 @@ public class MainPage extends AppCompatActivity {
 
         // Ambil data dari Intent
         Intent intent = getIntent();
-        String userName = intent.getStringExtra("USER_NAME");
-        String calories = intent.getStringExtra("USER_CALORIE_INTAKE");
-        int calculateCalories = Integer.parseInt(calories);
-        int protein = (int) ((calculateCalories * 0.25) / 4);
-        int carbs = (int) ((calculateCalories * 0.6) / 4);
-        int fats = (int) ((calculateCalories * 0.15) / 4);
-        String height = intent.getStringExtra("USER_HEIGHT");
-        String weight = intent.getStringExtra("USER_WEIGHT");
-        int age = intent.getIntExtra("USER_AGE", 0);
+        String userEmail = intent.getStringExtra("USER_EMAIL");
+        String userPassword = intent.getStringExtra("USER_PASSWORD");
 
-        // Jika tidak ada data dari Intent, ambil dari SharedPreferences
+        databaseHelper userDataDB = new databaseHelper(MainPage.this);
+        Cursor userDataCursor = userDataDB.searchUserData(userEmail, userPassword);
+
+        userDataCursor.moveToFirst();
+        String userName = userDataCursor.getString(1);
+        String userWeight = userDataCursor.getString(8);
+        String userHeight = userDataCursor.getString(7);
+        String userMaxCalorieIntake = userDataCursor.getString(10);
+        String userMaxProtein = userDataCursor.getString(11);
+        String userMaxFat = userDataCursor.getString(12);
+        String userMaxCarb = userDataCursor.getString(13);
+
+        /* Jika tidak ada data dari Intent, ambil dari SharedPreferences
         if (userName == null || userName.isEmpty()) {
             SharedPreferences sharedPref = getSharedPreferences("user_data", MODE_PRIVATE);
             userName = sharedPref.getString("USER_NAME", "Username");
         }
+        */
 
         // Setel data ke TextView
         usernameTextView.setText(userName);
-        caloriesMax.setText(calories);
-        proteinMax.setText(String.valueOf(protein));
-        carbsMax.setText(String.valueOf(carbs));
-        fatMax.setText(String.valueOf(fats));
-        heightView.setText(height);
-        weightView.setText(weight);
+        caloriesMax.setText(userMaxCalorieIntake);
+        proteinMax.setText(String.valueOf(userMaxProtein));
+        carbsMax.setText(String.valueOf(userMaxCarb));
+        fatMax.setText(String.valueOf(userMaxFat));
+        heightView.setText(userHeight);
+        weightView.setText(userWeight);
 
         // Tombol rekomendasi membuka fragment
         ImageView recommendButton = findViewById(R.id.recommend_button);

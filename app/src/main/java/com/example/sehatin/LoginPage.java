@@ -17,6 +17,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 public class LoginPage extends AppCompatActivity {
 
     @Override
@@ -59,21 +63,8 @@ public class LoginPage extends AppCompatActivity {
 
                 if(correctLogin && cursor.moveToFirst()) {
                     Intent intent = new Intent(LoginPage.this, MainPage.class);
-                    String userName = cursor.getString(1);
-                    String userWeight = cursor.getString(8);
-                    String userHeight = cursor.getString(7);
-                    String userCalorieIntake = cursor.getString(10);
-
-                    Log.d("LoginPage", "user_name: " + userName);
-                    Log.d("LoginPage", "user_weight: " + userWeight);
-                    Log.d("LoginPage", "user_height: " + userHeight);
-                    Log.d("LoginPage", "user_calorieIntake: " + userCalorieIntake);
-
-                    intent.putExtra("USER_NAME", userName);
-                    intent.putExtra("USER_WEIGHT", userWeight);
-                    intent.putExtra("USER_HEIGHT", userHeight);
-                    intent.putExtra("USER_CALORIE_INTAKE", userCalorieIntake);
-
+                    intent.putExtra("USER_EMAIL", userEmail);
+                    intent.putExtra("USER_PASSWORD", userPassword);
                     startActivity(intent);
                     finish();
                 }

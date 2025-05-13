@@ -82,7 +82,10 @@ public class RegisterCalorie extends AppCompatActivity {
                         user_height,
                         user_weight,
                         user_age,
-                        Integer.parseInt(text_userCalorie.getText().toString())
+                        Integer.parseInt(text_userCalorie.getText().toString()),
+                        Integer.parseInt(text_userProtein.getText().toString()),
+                        Integer.parseInt(text_userFats.getText().toString()),
+                        Integer.parseInt(text_userCarbs.getText().toString())
                 );
                 startActivity(intent);
                 finish();
