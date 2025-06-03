@@ -43,7 +43,7 @@ public class RecommendFragment extends Fragment {
         });
 
         // Tombol foodRecommend
-        View foodRecommendButton = view.findViewById(R.id.foodRecommend); // ganti dengan Button kalau pakai <Button>
+        View foodRecommendButton = view.findViewById(R.id.foodRecommend);
         foodRecommendButton.setOnClickListener(v -> {
             if (getActivity() != null) {
                 Intent intent = new Intent(getActivity(), FoodRecommendation.class);

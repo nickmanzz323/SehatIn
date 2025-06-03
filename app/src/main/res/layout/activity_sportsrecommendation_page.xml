@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".SportRecommendation">
+
+    <!-- Header -->
+
+    <ImageView
+        android:id="@+id/profileImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="72dp"
+        android:contentDescription="Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pppicture" />
+
+    <!-- Search -->
+
+    <!-- Scrollable Content -->
+
+    <TextView
+        android:id="@+id/usernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:text="Username"
+        android:textColor="@color/on_background"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/profileImage"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/homeButton"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/homebutton" />
+
+    <ImageView
+        android:id="@+id/searchBar"
+        android:layout_width="268dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Search Bar"
+        app:layout_constraintEnd_toStartOf="@id/filterButton"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileImage"
+        app:srcCompat="@drawable/searchbar" />
+
+    <ImageView
+        android:id="@+id/filterButton"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="Filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/homeButton"
+        app:srcCompat="@drawable/filterbutton" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
+        app:layout_constraintVertical_bias="1.0"
+        tools:layout_editor_absoluteX="64dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Item 1 -->
+            <include layout="@layout/item_sportlist" />
+
+            <!-- Item 2 -->
+            <include layout="@layout/item_sportlist" />
+
+            <!-- Item 3 -->
+            <include layout="@layout/item_sportlist" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

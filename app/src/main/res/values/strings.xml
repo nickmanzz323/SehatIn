@@ -78,6 +78,31 @@
     <string name="login">Login</string>
     <string name="sign_up">Sign Up</string>
     <string name="forgot_password">Forgot Password?</string>
+    <string name="ingredients_list_bakso">
+        \u2022 200 gr daging sapi giling\n
+        \u2022 100 gr batu es, giling halus bersama daging sapi\n
+        \u2022 2 sdm bawang merah goreng\n
+        \u2022 2 sdm bawang putih goreng\n
+        \u2022 1 butir putih telur\n
+        \u2022 1 sdt baking powder\n
+        \u2022 1/4 sdt merica bubuk\n
+        \u2022 150 gr tepung sagu\n
+        \u2022 1 sachet Royco sapi\n
+        \u2022 500 ml air\n
+        \u2022 10 gr daun bawang\n
+        \u2022 10 gr seledri\n
+        \u2022 10 gr bawang merah goreng\n
+        \u2022 bihun\n
+        \u2022 50 gr pak choi
+    </string>
+    <string name="cooking_instructions_bakso">
+        1. Campurkan daging sapi giling, batu es yang sudah dihaluskan, bawang merah goreng, bawang putih goreng, putih telur, baking powder, merica bubuk, tepung sagu, dan Royco sapi. Aduk rata hingga adonan kalis.\n
+        2. Panaskan 500 ml air hingga mendidih. Kecilkan api.\n
+        3. Bentuk adonan bakso menjadi bola-bola menggunakan tangan yang dibasahi air atau sendok, lalu masukkan langsung ke dalam air mendidih. Lakukan hingga adonan habis.\n
+        4. Masak bakso hingga mengapung dan matang sempurna. Angkat dan tiriskan.\n
+        5. Untuk kuah, Anda bisa menggunakan kaldu sapi. Tambahkan daun bawang, seledri, dan bawang merah goreng sebagai pelengkap.\n
+        6. Sajikan bakso dengan bihun dan pak choi rebus.
+    </string>
 
     <!-- String untuk -->
 </resources>
