@@ -103,6 +103,7 @@
         5. Untuk kuah, Anda bisa menggunakan kaldu sapi. Tambahkan daun bawang, seledri, dan bawang merah goreng sebagai pelengkap.\n
         6. Sajikan bakso dengan bihun dan pak choi rebus.
     </string>
+    <string name="underlined_calories"><u>TextView</u></string>
 
     <!-- String untuk -->
 </resources>
