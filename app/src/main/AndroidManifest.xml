@@ -33,6 +33,19 @@
         <activity
             android:name=".RegisterWeight"
             android:exported="false" />
+        <activity
+            android:name=".FoodRecommendation"
+            android:exported="false" />
+        <activity
+            android:name=".BaksoDetail"
+            android:exported="false" />
+        <activity
+            android:name=".SportRecommendation"
+            android:exported="false" />
+        <activity
+            android:name=".olahragaRingan"
+            android:exported="false" />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

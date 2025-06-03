@@ -88,10 +88,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:clickable="true"
+            android:focusable="true"
             android:padding="16dp">
 
             <!-- Item 1 -->
-            <include layout="@layout/item_sportlist" />
+            <include
+                android:id="@+id/sport1"
+                layout="@layout/item_sportlist" />
 
             <!-- Item 2 -->
             <include layout="@layout/item_sportlist" />

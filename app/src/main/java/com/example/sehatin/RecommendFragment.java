@@ -46,8 +46,29 @@ public class RecommendFragment extends Fragment {
         View foodRecommendButton = view.findViewById(R.id.foodRecommend);
         foodRecommendButton.setOnClickListener(v -> {
             if (getActivity() != null) {
+                MainPage mainPage = (MainPage) getActivity();
+                String userEmail = mainPage.userEmail;
+                String userPassword = mainPage.userPassword;
                 Intent intent = new Intent(getActivity(), FoodRecommendation.class);
+                intent.putExtra("USER_EMAIL", userEmail);
+                intent.putExtra("USER_PASSWORD", userPassword);
                 startActivity(intent);
+            }
+        });
+
+        View sportRecommendButton = view.findViewById(R.id.imageView12);
+        sportRecommendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (getActivity() != null) {
+                    MainPage mainPage = (MainPage) getActivity();
+                    String userEmail = mainPage.userEmail;
+                    String userPassword = mainPage.userPassword;
+                    Intent intent = new Intent(getActivity(), SportRecommendation.class);
+                    intent.putExtra("USER_EMAIL", userEmail);
+                    intent.putExtra("USER_PASSWORD", userPassword);
+                    startActivity(intent);
+                }
             }
         });
     }

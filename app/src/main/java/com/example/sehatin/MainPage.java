@@ -31,6 +31,8 @@ public class MainPage extends AppCompatActivity {
     private static final int REQUEST_IMAGE_CAPTURE = 101;
     private Uri photoUri;
     private File photoFile;
+    public String userEmail;
+    public String userPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +50,8 @@ public class MainPage extends AppCompatActivity {
 
         // Ambil data dari Intent
         Intent intent = getIntent();
-        String userEmail = intent.getStringExtra("USER_EMAIL");
-        String userPassword = intent.getStringExtra("USER_PASSWORD");
+        userEmail = intent.getStringExtra("USER_EMAIL");
+        userPassword = intent.getStringExtra("USER_PASSWORD");
 
         databaseHelper userDataDB = new databaseHelper(MainPage.this);
         Cursor userDataCursor = userDataDB.searchUserData(userEmail, userPassword);
@@ -82,11 +84,7 @@ public class MainPage extends AppCompatActivity {
         // Tombol rekomendasi membuka fragment
         ImageView recommendButton = findViewById(R.id.recommend_button);
         recommendButton.setOnClickListener(v -> {
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new RecommendFragment())
-                    .addToBackStack(null)
-                    .commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new RecommendFragment()).addToBackStack(null).commit();
         });
 
         // Tombol kamera
