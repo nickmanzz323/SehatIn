@@ -12,12 +12,12 @@
         android:id="@+id/text_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:text="@string/login"
-        android:textColor="@color/text_color2"
+        android:layout_marginTop="140dp"
+        android:text="Login SehatIn"
+        android:textColor="@color/white"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.331"
+        app:layout_constraintVertical_bias="0.372"
         app:srcCompat="@drawable/textmail" />
 
     <ImageView
@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView40"
-        app:layout_constraintVertical_bias="0.116"
+        app:layout_constraintVertical_bias="0.184"
         app:srcCompat="@drawable/textpassword" />
 
     <EditText
@@ -82,24 +82,24 @@
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="316dp"
-        android:layout_height="40dp"
+        android:layout_width="324dp"
+        android:layout_height="58dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="24dp"
         android:backgroundTint="@color/button_color"
-        android:text="@string/login"
+        android:text= "@string/login"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonSignUp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonSignUp"
-        android:layout_width="316dp"
-        android:layout_height="40dp"
+        android:layout_width="322dp"
+        android:layout_height="59dp"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:layout_marginBottom="40dp"
@@ -116,8 +116,8 @@
         android:id="@+id/forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="24dp"
         android:text="@string/forgot_password"
         android:textColor="@color/button_color"
         android:textSize="15sp"
