@@ -4,17 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"  tools:context=".AddMeal" >
+    android:background="@color/black"
+    tools:context=".AddMeal">
 
     <ImageView
         android:id="@+id/icon_close"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="72dp"  android:src="@drawable/prevbutton"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="72dp"
+        android:contentDescription="Close"
+        android:src="@drawable/prevbutton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Close" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -33,22 +35,25 @@
         android:id="@+id/icon_add"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="72dp"  android:layout_marginEnd="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="32dp"
+        android:contentDescription="Add"
         android:src="@drawable/plusicon"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Add" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/ll_nutrition_summary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"  android:orientation="horizontal"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
         android:paddingBottom="16dp"
         android:weightSum="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -150,7 +155,8 @@
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="#333333"
+        android:background="@color/outline"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_nutrition_summary" />
@@ -176,10 +182,10 @@
                 android:id="@+id/tv_food_name_1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="Telur mata sapi"
                 android:textColor="@color/on_background"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/icon_more_1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -200,11 +206,11 @@
                 android:id="@+id/icon_more_1"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:contentDescription="More options"
                 android:src="@drawable/tripledot"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="More options" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -216,10 +222,10 @@
                 android:id="@+id/tv_food_name_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="Apel merah"
                 android:textColor="@color/on_background"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/icon_more_2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -240,11 +246,11 @@
                 android:id="@+id/icon_more_2"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:contentDescription="More options"
                 android:src="@drawable/tripledot"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="More options" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -256,10 +262,10 @@
                 android:id="@+id/tv_food_name_3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
                 android:text="Burger"
                 android:textColor="@color/on_background"
                 android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/icon_more_3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -280,11 +286,11 @@
                 android:id="@+id/icon_more_3"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:contentDescription="More options"
                 android:src="@drawable/tripledot"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="More options" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
@@ -297,13 +303,13 @@
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="24dp"
         android:backgroundTint="#00C853"
-        app:srcCompat="@drawable/savebutton"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/savebutton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
