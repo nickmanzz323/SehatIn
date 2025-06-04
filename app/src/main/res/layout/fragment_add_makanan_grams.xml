@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".FragmentAddMeal"
     android:background="@android:color/transparent">
 
     <View
@@ -64,7 +65,7 @@
                     android:id="@+id/tv_total_calories_dialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="416"
+                    android:text="100"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -88,7 +89,7 @@
                     android:id="@+id/tv_total_proteins_dialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="20g"
+                    android:text="10g"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -112,7 +113,7 @@
                     android:id="@+id/tv_total_fats_dialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="15g"
+                    android:text="10g"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -136,7 +137,7 @@
                     android:id="@+id/tv_total_carbs_dialog"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="15g"
+                    android:text="10g"
                     android:textColor="@android:color/white"
                     android:textSize="18sp"
                     android:textStyle="bold" />

@@ -99,6 +99,16 @@ public class MainPage extends AppCompatActivity {
                 openCamera();
             }
         });
+
+        // Menambahkan OnClickListener untuk plus_icon
+        ImageView plusIcon = findViewById(R.id.plus_icon);
+        plusIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addMealIntent = new Intent(MainPage.this, AddMeal.class);
+                startActivity(addMealIntent);
+            }
+        });
     }
 
     private void openCamera() {
